@@ -17,10 +17,10 @@ This repo showcases **shared Kubernetes fundamentals** (Deployment, ConfigMap) a
     │   ├── deployment.yaml       # Defines 3 replicas of nginx:latest
     │   └── configmap.yaml        # APP_ENV and APP_DEBUG variables
     ├── aws/                      # EKS-specific infrastructure
-    │   ├── service.yaml          # NLB annotations (service.beta.k8s.io/aws-load-balancer-type)
+    │   ├── service.yaml          # NLB annotations
     │   └── ingress.yaml          # ALB Ingress Controller configurations
     └── azure/                    # AKS-specific infrastructure
-        ├── service.yaml          # Internal LB annotations (service.beta.k8s.io/azure-load-balancer-internal)
+        ├── service.yaml          # Internal LB annotations
         └── ingress.yaml          # Azure Application Gateway (AGIC) rules
 
 
