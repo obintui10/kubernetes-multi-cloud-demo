@@ -9,7 +9,7 @@ A hands‑on demonstration of deploying workloads across **AWS EKS** and **Azure
 This repo showcases **shared Kubernetes fundamentals** (Deployment, ConfigMap) alongside **cloud‑specific orchestration** (Service, Ingress with provider annotations).
 
 ## 📂 Repository Structure
-
+```bash
 manifests/
 ├── shared/                   # Portable, cloud-agnostic components
 │   ├── deployment.yaml       # Generic Deployment (works everywhere)
