@@ -20,10 +20,9 @@ manifests/
     ├── service.yaml          # Service with internal LB annotation
     └── ingress.yaml          # Application Gateway Ingress
 
-
-
 ## 🚀 Quickstart
 
+```bash
 # 1. Clone the repo
 git clone https://github.com/obintui10/kubernetes-multi-cloud-demo.git
 cd kubernetes-multi-cloud-demo
