@@ -9,19 +9,16 @@ A hands‑on demonstration of deploying workloads across **AWS EKS** and **Azure
 This repo showcases **shared Kubernetes fundamentals** (Deployment, ConfigMap) alongside **cloud‑specific orchestration** (Service, Ingress with provider annotations).
 
 ## 📂 Repository Structure
-.
-├── LICENSE
-├── README.md
-└── manifests/
-    ├── shared/                   # Portable, cloud-agnostic components
-    │   ├── deployment.yaml       # Defines 3 replicas of nginx:latest
-    │   └── configmap.yaml        # APP_ENV and APP_DEBUG variables
-    ├── aws/                      # EKS-specific infrastructure
-    │   ├── service.yaml          # NLB annotations
-    │   └── ingress.yaml          # ALB Ingress Controller configurations
-    └── azure/                    # AKS-specific infrastructure
-        ├── service.yaml          # Internal LB annotations
-        └── ingress.yaml          # Azure Application Gateway (AGIC) rules
+manifests/
+├── shared/                   # Portable, cloud-agnostic components
+│   ├── deployment.yaml       # Generic Deployment (works everywhere)
+│   └── configmap.yaml        # Generic ConfigMap (portable)
+├── aws/                      # AWS EKS-specific infrastructure
+│   ├── service.yaml          # Service with NLB annotation
+│   └── ingress.yaml          # ALB Ingress configuration
+└── azure/                    # Azure AKS-specific infrastructure
+    ├── service.yaml          # Service with internal LB annotation
+    └── ingress.yaml          # Application Gateway Ingress
 
 
 ## 🚀 Quickstart
