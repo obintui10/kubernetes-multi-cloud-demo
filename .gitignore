@@ -1,0 +1,33 @@
+# ────────────────
+# Kubernetes
+# ────────────────
+*.kubeconfig
+.kube/
+*.yaml.tmp
+*.yml.tmp
+
+# ────────────────
+# Helm
+# ────────────────
+charts/*.tgz
+helmfile.lock
+
+# ────────────────
+# Terraform (if infra provisioning is added)
+# ────────────────
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# ────────────────
+# Local environment & logs
+# ────────────────
+.env
+*.log
+
+# ────────────────
+# OS/system files
+# ────────────────
+.DS_Store
+Thumbs.db
