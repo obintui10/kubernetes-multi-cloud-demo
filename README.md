@@ -8,23 +8,6 @@
 A hands‑on demonstration of deploying workloads across **AWS EKS** and **Azure AKS** using Kubernetes manifests.  
 This repo showcases **shared Kubernetes fundamentals** (Deployment, ConfigMap) alongside **cloud‑specific orchestration** (Service, Ingress with provider annotations).
 
----
-
-## 📂 Repository Structure
-
-manifests/
-│── shared/
-│   ├── deployment.yaml      # Generic Deployment (works everywhere)
-│   └── configmap.yaml       # Generic ConfigMap (portable)
-│── aws/
-│   ├── service.yaml         # AWS EKS Service with NLB annotation
-│   └── ingress.yaml         # AWS ALB Ingress configuration
-│── azure/
-│   ├── service.yaml         # Azure AKS Service with internal LB annotation
-│   └── ingress.yaml         # Azure Application Gateway Ingress
-
-
----
 
 ## 🚀 Quickstart
 
@@ -46,13 +29,26 @@ manifests/
 - kubectl apply -f manifests/azure/service.yaml
 - kubectl apply -f manifests/azure/ingress.yaml
 
+## 📂 Repository Structure
+
+manifests/
+│── shared/
+│   ├── deployment.yaml      # Generic Deployment (works everywhere)
+│   └── configmap.yaml       # Generic ConfigMap (portable)
+│── aws/
+│   ├── service.yaml         # AWS EKS Service with NLB annotation
+│   └── ingress.yaml         # AWS ALB Ingress configuration
+│── azure/
+│   ├── service.yaml         # Azure AKS Service with internal LB annotation
+│   └── ingress.yaml         # Azure Application Gateway Ingress
+
 ## 🔄 Workflow
 - Deployment → Creates 3 replicas of nginx:latest.
 - ConfigMap → Injects environment variables (APP_ENV, APP_DEBUG).
 - Service → Exposes pods via LoadBalancer (AWS NLB / Azure Internal LB).
 - Ingress → Routes external traffic via ALB (AWS) or App Gateway (Azure).
 
-## 🏗 Architecture
+## 🏗 Architecture Diagram
 
 ```text
 +---------------------------------------------------+
