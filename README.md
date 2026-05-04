@@ -23,23 +23,24 @@ manifests/
 
 ## 🚀 Quickstart
 
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/obintui10/kubernetes-multi-cloud-demo.git
-   cd kubernetes-multi-cloud-demo
+# 1. Clone the repo
+git clone https://github.com/obintui10/kubernetes-multi-cloud-demo.git
+cd kubernetes-multi-cloud-demo
 
-## Apply shared manifests
-- kubectl apply -f manifests/shared/deployment.yaml
-- kubectl apply -f manifests/shared/configmap.yaml
+# 2. Apply shared manifests
+kubectl apply -f manifests/shared/deployment.yaml
+kubectl apply -f manifests/shared/configmap.yaml
 
-## Apply cloud‑specific manifests
-## For AWS EKS:
-- kubectl apply -f manifests/aws/service.yaml
-- kubectl apply -f manifests/aws/ingress.yaml
+# 3. Apply cloud‑specific manifests
 
-## For Azure AKS:
-- kubectl apply -f manifests/azure/service.yaml
-- kubectl apply -f manifests/azure/ingress.yaml
+# For AWS EKS:
+kubectl apply -f manifests/aws/service.yaml
+kubectl apply -f manifests/aws/ingress.yaml
+
+# For Azure AKS:
+kubectl apply -f manifests/azure/service.yaml
+kubectl apply -f manifests/azure/ingress.yaml
+
 
 ## 🔄 Workflow
 - Deployment → Creates 3 replicas of nginx:latest.
