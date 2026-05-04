@@ -21,6 +21,7 @@ manifests/
     └── ingress.yaml          # Application Gateway Ingress
 
 
+
 ## 🚀 Quickstart
 
 # 1. Clone the repo
