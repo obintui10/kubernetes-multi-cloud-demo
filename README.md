@@ -93,3 +93,46 @@ kubectl apply -f manifests/azure/ingress.yaml
 - Extend Terraform integration for cluster provisioning.
 - Demonstrate CI/CD pipeline deploying manifests to EKS + AKS.
 - Add monitoring stack (Prometheus + Grafana).
+```
+## 🏗 Architecture Diagram (Mermaid)
+```mermaid
+flowchart TB
+    subgraph Pods["Pods (demo-app)"]
+        Nginx["3 replicas of nginx:latest"]
+        ConfigMap["ConfigMap: APP_ENV + APP_DEBUG"]
+        Nginx --> ConfigMap
+    end
+
+    Pods --> Service
+
+    subgraph Service["Service (LoadBalancer)"]
+        LB["Exposes pods on port 80"]
+    end
+
+    Service --> Ingress
+
+    subgraph Ingress["Ingress (Host-based rules: demo.example.com)"]
+        Route["Routes external traffic"]
+    end
+
+    Ingress --> AWS
+    Ingress --> Azure
+
+    subgraph AWS["AWS (EKS)"]
+        NLB["Network Load Balancer"]
+        ALB["ALB Ingress Controller"]
+        AnnoAWS["Annotations: service.beta.k8s.io/..."]
+        NLB --> ALB --> AnnoAWS
+    end
+
+    subgraph Azure["Azure (AKS)"]
+        ILB["Internal Load Balancer"]
+        AppGW["Application Gateway"]
+        AnnoAzure["Annotations: service.beta.k8s.io/..."]
+        ILB --> AppGW --> AnnoAzure
+    end
+
+
+
+
+
