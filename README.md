@@ -111,7 +111,8 @@ flowchart TB
 
     Service --> Ingress
 
-    subgraph Ingress["Ingress (Host-based rules: demo.example.com)"]
+    subgraph Ingress["Ingress (Host-based rules:
+demo.example.com)"]
         Route["Routes external traffic"]
     end
 
@@ -121,14 +122,16 @@ flowchart TB
     subgraph AWS["AWS (EKS)"]
         NLB["Network Load Balancer"]
         ALB["ALB Ingress Controller"]
-        AnnoAWS["Annotations: service.beta.k8s.io/..."]
+        AnnoAWS["Annotations: service.
+beta.k8s.io/..."]
         NLB --> ALB --> AnnoAWS
     end
 
     subgraph Azure["Azure (AKS)"]
         ILB["Internal Load Balancer"]
         AppGW["Application Gateway"]
-        AnnoAzure["Annotations: service.beta.k8s.io/..."]
+        AnnoAzure["Annotations: service.
+beta.k8s.io/..."]
         ILB --> AppGW --> AnnoAzure
     end
 
