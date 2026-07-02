@@ -134,8 +134,57 @@ beta.k8s.io/..."]
 beta.k8s.io/..."]
         ILB --> AppGW --> AnnoAzure
     end
+```
+## 1. Pods + ConfigMap
+```mermaid
+flowchart TD
+    subgraph Pods["Pods (demo-app)"]
+        Nginx["3 replicas of nginx:latest"]
+        ConfigMap["ConfigMap: APP_ENV + APP_DEBUG"]
+        Nginx --> ConfigMap
+    end
+```
+## 2. Service (LoadBalancer)
+```mermaid
+flowchart TD
+    subgraph Service["Service (LoadBalancer)"]
+        LB["Exposes pods on port 80"]
+    end
 
+    Pods --> Service
+```
+## 3. Ingress Rules
+```mermaid
+flowchart TD
+    subgraph Ingress["Ingress (Host-based rules: demo.example.com)"]
+        Route["Routes external traffic"]
+    end
 
+    Service --> Ingress
+```
+## 4. AWS Ingress Path
+```mermaid
+flowchart TD
+    subgraph AWS["AWS (EKS)"]
+        NLB["Network Load Balancer"]
+        ALB["ALB Ingress Controller"]
+        AnnoAWS["Annotations: service.beta.k8s.io/..."]
+        NLB --> ALB --> AnnoAWS
+    end
 
+    Ingress --> AWS
+```
+## 5. Azure Ingress Path
+```mermaid
+flowchart TD
+    subgraph Azure["Azure (AKS)"]
+        ILB["Internal Load Balancer"]
+        AppGW["Application Gateway"]
+        AnnoAzure["Annotations: service.beta.k8s.io/..."]
+        ILB --> AppGW --> AnnoAzure
+    end
+
+    Ingress --> Azure
+```
 
 
