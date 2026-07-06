@@ -107,8 +107,12 @@ Exposes pods on port 80"]
     Service --> Ingress["Ingress (demo.example.com) — Routes external traffic"]
 
     Ingress --> AWS_NLB["AWS (EKS): Network Load Balancer"]
-    AWS_NLB --> AWS_ALB["ALB Ingress Controller"]
-    AWS_ALB --> AWS_Anno["AWS Annotations"]
+    AWS_NLB -->
+AWS_ALB[
+"ALB Ingress Controller"]
+    AWS_ALB -->
+AWS_Anno[
+"AWS Annotations"]
 
     Ingress --> Azure_ILB["Azure (AKS): Internal Load Balancer"]
     Azure_ILB --> Azure_AppGW["Application Gateway"]
