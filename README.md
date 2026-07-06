@@ -131,7 +131,7 @@ Internal Load Balancer"]
 ```
 ## 🚀 CI/CD Deployment Workflow
 ```mermaid
-flowchart LR
+flowchart TD
     Dev["Developer commits code"] --> Repo["GitHub Repository"]
     Repo --> CI["CI Pipeline (Build & Test)"]
     CI --> Registry["Container Registry (Docker Hub / ECR / ACR)"]
