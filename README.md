@@ -232,3 +232,8 @@ flowchart TB
     Azure_ILB --> Azure_AppGW["Application Gateway"]
     Azure_AppGW --> Azure_Anno["Azure Annotations"]
 ```
+1. Pods + ConfigMap
+```mermaid
+flowchart TB
+    Pods["Pods (demo-app): 3 replicas of nginx"] --> Config["ConfigMap with APP_ENV and APP_DEBUG"]
+```
