@@ -217,3 +217,18 @@ flowchart TB
     Azure_ILB --> Azure_AppGW["Application Gateway"]
     Azure_AppGW --> Azure_Anno["Annotations (Azure specific)"]
 ```
+```mermaid
+flowchart TB
+    Pods["Pods (demo-app): 3 replicas of nginx"] --> Config["ConfigMap with APP_ENV and APP_DEBUG"]
+
+    Pods --> Service["Service (LoadBalancer) — Exposes pods on port 80"]
+    Service --> Ingress["Ingress (demo.example.com) — Routes external traffic"]
+
+    Ingress --> AWS_NLB["AWS (EKS): Network Load Balancer"]
+    AWS_NLB --> AWS_ALB["ALB Ingress Controller"]
+    AWS_ALB --> AWS_Anno["AWS Annotations"]
+
+    Ingress --> Azure_ILB["Azure (AKS): Internal Load Balancer"]
+    Azure_ILB --> Azure_AppGW["Application Gateway"]
+    Azure_AppGW --> Azure_Anno["Azure Annotations"]
+```
