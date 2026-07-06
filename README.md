@@ -99,7 +99,7 @@ kubectl apply -f manifests/azure/ingress.yaml
 flowchart TB
     Pods["Pods (demo-app):
 3 Replicas of nginx"] --> Configuration ["Configuration
-Map
+ Map
 with APP_ENV
 and APP_DEBUG"]
 
