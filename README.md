@@ -186,5 +186,19 @@ flowchart TD
 
     Ingress --> Azure
 ```
+```mermaid
+flowchart TB
+    Nginx["3 replicas of nginx:latest"] --> ConfigMap["ConfigMap: APP_ENV + APP_DEBUG"]
 
+    Nginx --> Service
+    Service["Service (LoadBalancer)\nExposes pods on port 80"] --> Ingress["Ingress (Host-based rules: demo.example.com)\nRoutes external traffic"]
 
+    Ingress --> NLB["AWS (EKS): Network Load Balancer"]
+    NLB --> ALB["ALB Ingress Controller"]
+    ALB --> AnnoAWS["Annotations: service.beta.k8s.io/..."]
+
+    Ingress --> ILB["Azure (AKS): Internal Load Balancer"]
+    ILB --> AppGW["Application Gateway"]
+    AppGW --> AnnoAzure["Annotations: service.beta.k8s.io/..."]
+
+```
