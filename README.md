@@ -98,8 +98,7 @@ kubectl apply -f manifests/azure/ingress.yaml
 ```mermaid
 flowchart TB
     Pods["Pods (demo-app):
-3 Replicas of nginx"] --> Configuration ["Configuration
- Map
+3 Replicas of nginx"] --> Configuration ["ConfigurationMap
 with APP_ENV
 and APP_DEBUG"]
 
