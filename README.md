@@ -142,4 +142,13 @@ flowchart TD
 (EKS / AKS)"]
     Cluster --> Pods["Pods running
 updated application"]
+
+  %% Color styling for 7 nodes
+    style Dev fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style Repo fill:#2196F3,stroke:#333,stroke-width:2px,color:#fff
+    style CI fill:#FF9800,stroke:#333,stroke-width:2px,color:#fff
+    style Registry fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
+    style CD fill:#00BCD4,stroke:#333,stroke-width:2px,color:#fff
+    style Cluster fill:#E91E63,stroke:#333,stroke-width:2px,color:#fff
+    style Pods fill:#795548,stroke:#333,stroke-width:2px,color:#fff
 ```
