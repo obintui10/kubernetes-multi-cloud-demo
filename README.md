@@ -129,4 +129,13 @@ Internal Load Balancer"]
     style Azure_Anno fill:#607D8B,stroke:#333,stroke-width:2px,color:#fff
 
 ```
-
+## 🚀 CI/CD Deployment Workflow
+```mermaid
+flowchart LR
+    Dev["Developer commits code"] --> Repo["GitHub Repository"]
+    Repo --> CI["CI Pipeline (Build & Test)"]
+    CI --> Registry["Container Registry (Docker Hub / ECR / ACR)"]
+    Registry --> CD["CD Pipeline (Deploy to Kubernetes)"]
+    CD --> Cluster["Kubernetes Cluster (EKS / AKS)"]
+    Cluster --> Pods["Pods running updated application"]
+```
