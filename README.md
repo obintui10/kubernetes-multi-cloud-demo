@@ -110,7 +110,8 @@ Network Load Balancer"]
     AWS_NLB --> AWS_ALB["ALB Ingress Controller"]
     AWS_ALB --> AWS_Anno["AWS Annotations"]
 
-    Ingress --> Azure_ILB["Azure (AKS): Internal Load Balancer"]
+    Ingress --> Azure_ILB["Azure (AKS):
+Internal Load Balancer"]
     Azure_ILB --> Azure_AppGW["Application Gateway"]
     Azure_AppGW --> Azure_Anno["Azure Annotations"]
 ```
