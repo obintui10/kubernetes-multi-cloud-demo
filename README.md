@@ -106,7 +106,8 @@ and APP_DEBUG"]
 Exposes pods on port 80"]
     Service --> Ingress["Ingress (demo.example.com) — Routes external traffic"]
 
-    Ingress --> AWS_NLB["AWS (EKS): Network Load Balancer"]
+    Ingress --> AWS_NLB["AWS (EKS):
+Network Load Balancer"]
     AWS_NLB -->
 AWS_ALB["ALB Ingress Controller"]
     AWS_ALB -->
