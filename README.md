@@ -116,5 +116,17 @@ Internal Load Balancer"]
     Azure_ILB --> Azure_AppGW["Application Gateway"]
     Azure_AppGW --> Azure_Anno["Azure Annotations"]
 
+ %% Color styling for 10 nodes
+    style Pods fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style Config fill:#2196F3,stroke:#333,stroke-width:2px,color:#fff
+    style Service fill:#FF9800,stroke:#333,stroke-width:2px,color:#fff
+    style Ingress fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
+    style AWS_NLB fill:#00BCD4,stroke:#333,stroke-width:2px,color:#fff
+    style AWS_ALB fill:#E91E63,stroke:#333,stroke-width:2px,color:#fff
+    style AWS_Anno fill:#8BC34A,stroke:#333,stroke-width:2px,color:#fff
+    style Azure_ILB fill:#795548,stroke:#333,stroke-width:2px,color:#fff
+    style Azure_AppGW fill:#FFC107,stroke:#333,stroke-width:2px,color:#fff
+    style Azure_Anno fill:#607D8B,stroke:#333,stroke-width:2px,color:#fff
+
 ```
 
