@@ -101,7 +101,8 @@ flowchart TB
 3 replicas of nginx"] --> Config["ConfigMap with APP_ENV
 and APP_DEBUG"]
 
-    Pods --> Service["Service (LoadBalancer) — Exposes pods on port 80"]
+    Pods --> Service["Service (LoadBalancer) —
+Exposes pods on port 80"]
     Service --> Ingress["Ingress (demo.example.com) — Routes external traffic"]
 
     Ingress --> AWS_NLB["AWS (EKS): Network Load Balancer"]
